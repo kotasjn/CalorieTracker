@@ -9,6 +9,7 @@ rootProject.name = "CaloryTracker"
 include ':app'
 
 include ':core'
+include ':coreui'
 
 include ':onboarding'
 include ':onboarding:onboarding_presentation'

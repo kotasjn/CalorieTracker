@@ -83,6 +83,7 @@ android {
         kapt(DaggerHilt.hiltCompiler)
 
         implementation(project(Modules.core))
+        implementation(project(Modules.coreUi))
         implementation(project(Modules.onboardingPresentation))
         implementation(project(Modules.onboardingDomain))
         implementation(project(Modules.trackerPresentation))
