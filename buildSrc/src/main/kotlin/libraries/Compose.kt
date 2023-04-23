@@ -18,9 +18,9 @@ object Compose {
     const val hiltNavigationCompose =
         "androidx.hilt:hilt-navigation-compose:$hiltNavigationComposeVersion"
 
-    private const val activityComposeVersion = "1.4.0"
+    private const val activityComposeVersion = "1.7.1"
     const val activityCompose = "androidx.activity:activity-compose:$activityComposeVersion"
 
-    private const val lifecycleVersion = "2.4.0"
+    private const val lifecycleVersion = "2.6.1"
     const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion"
 }

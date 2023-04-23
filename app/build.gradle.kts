@@ -23,6 +23,7 @@ android {
         targetSdk = ProjectConfig.targetSdk
         versionCode = ProjectConfig.versionCode
         versionName = ProjectConfig.versionName
+        multiDexEnabled = true
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
