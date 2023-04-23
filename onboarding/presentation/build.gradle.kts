@@ -1,4 +1,4 @@
-apply("$rootDir/base-module.gradle")
+apply("$rootDir/compose-module.gradle")
 
 dependencies {
     "implementation"(project(Modules.core))

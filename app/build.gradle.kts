@@ -55,14 +55,19 @@ android {
 
     packagingOptions {
         resources {
-            exclude("META-INF/AL2.0")
-            exclude("META-INF/LGPL2.1")
-            exclude("**/attach_hotspot_windows.dll")
-            exclude("META-INF/licenses/ASM")
+            resources.excludes.addAll(
+                listOf(
+                    "META-INF/AL2.0",
+                    "META-INF/LGPL2.1",
+                    "**/attach_hotspot_windows.dll",
+                    "META-INF/licenses/ASM",
+                ),
+            )
         }
     }
 
     dependencies {
+        implementation(platform(Compose.composeBom))
         implementation(Compose.compiler)
         implementation(Compose.ui)
         implementation(Compose.uiToolingPreview)
