@@ -12,8 +12,8 @@ include ':core'
 include ':coreui'
 
 include ':onboarding'
-include ':onboarding:onboarding_presentation'
-include ':onboarding:onboarding_domain'
+include ':onboarding:presentation'
+include ':onboarding:domain'
 
 include ':tracker'
 include ':tracker:tracker_data'
