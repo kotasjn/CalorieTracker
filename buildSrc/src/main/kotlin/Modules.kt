@@ -7,7 +7,7 @@ object Modules {
     const val onboardingDomain = ":onboarding:domain"
     const val onboardingPresentation = ":onboarding:presentation"
 
-    const val trackerData = ":tracker:tracker_data"
-    const val trackerDomain = ":tracker:tracker_domain"
-    const val trackerPresentation = ":tracker:tracker_presentation"
+    const val trackerData = ":tracker:data"
+    const val trackerDomain = ":tracker:domain"
+    const val trackerPresentation = ":tracker:presentation"
 }

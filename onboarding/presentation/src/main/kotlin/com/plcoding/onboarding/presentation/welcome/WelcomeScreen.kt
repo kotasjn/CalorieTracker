@@ -16,8 +16,8 @@ import androidx.compose.ui.text.style.TextAlign
 import com.plcoding.core.navigation.Route
 import com.plcoding.core.util.UIEvent
 import com.plcoding.coreui.LocalSpacing
+import com.plcoding.onboarding.presentation.R
 import com.plcoding.onboarding.presentation.components.ActionButton
-import core.R
 
 @Composable
 fun WelcomeScreen(

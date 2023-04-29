@@ -62,12 +62,23 @@ android {
                     "META-INF/LGPL2.1",
                     "**/attach_hotspot_windows.dll",
                     "META-INF/licenses/ASM",
+                    "META-INF/*.kotlin_module",
                 ),
             )
         }
     }
 
     dependencies {
+        // Project modules
+        implementation(project(Modules.core))
+        implementation(project(Modules.coreUi))
+        implementation(project(Modules.onboardingPresentation))
+        implementation(project(Modules.onboardingDomain))
+        implementation(project(Modules.trackerPresentation))
+        implementation(project(Modules.trackerDomain))
+        implementation(project(Modules.trackerData))
+
+        // Jetpack Compose dependencies
         implementation(platform(Compose.composeBom))
         implementation(Compose.compiler)
         implementation(Compose.ui)
@@ -79,33 +90,32 @@ android {
         implementation(Compose.viewModelCompose)
         implementation(Compose.activityCompose)
 
+        // Hilt dependencies
         implementation(DaggerHilt.hiltAndroid)
         kapt(DaggerHilt.hiltCompiler)
 
-        implementation(project(Modules.core))
-        implementation(project(Modules.coreUi))
-        implementation(project(Modules.onboardingPresentation))
-        implementation(project(Modules.onboardingDomain))
-        implementation(project(Modules.trackerPresentation))
-        implementation(project(Modules.trackerDomain))
-        implementation(project(Modules.trackerData))
-
+        // Other core AndroidX dependencies
         implementation(AndroidX.coreKtx)
         implementation(AndroidX.appCompat)
 
+        // Coil dependency
         implementation(Coil.coilCompose)
 
+        // Material design dependency
         implementation(Google.material)
 
+        // Retrofit dependencies
         implementation(Retrofit.okHttp)
         implementation(Retrofit.retrofit)
         implementation(Retrofit.okHttpLoggingInterceptor)
         implementation(Retrofit.moshiConverter)
 
+        // Room dependencies
         kapt(Room.roomCompiler)
         implementation(Room.roomKtx)
         implementation(Room.roomRuntime)
 
+        // Testing dependencies
         testImplementation(Testing.junit4)
         testImplementation(Testing.junitAndroidExt)
         testImplementation(Testing.truth)
