@@ -10,7 +10,7 @@ import com.plcoding.core.domain.preferences.Preferences
 import com.plcoding.core.domain.usecase.FilterOutDigits
 import com.plcoding.core.navigation.Route
 import com.plcoding.core.util.UIEvent
-import com.plcoding.core.util.UiText
+import com.plcoding.core.util.UIText
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
@@ -38,7 +38,7 @@ class AgeViewModel @Inject constructor(
         viewModelScope.launch {
             val ageNumber = age.toIntOrNull() ?: kotlin.run {
                 _uiEvent.send(
-                    UIEvent.ShowSnackBar(UiText.StringResource(R.string.error_age_cant_be_empty)),
+                    UIEvent.ShowSnackBar(UIText.StringResource(R.string.error_age_cant_be_empty)),
                 )
                 return@launch
             }

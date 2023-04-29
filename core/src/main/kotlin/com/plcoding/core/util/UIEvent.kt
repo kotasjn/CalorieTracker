@@ -5,5 +5,5 @@ sealed class UIEvent {
 
     object NavigateUp : UIEvent()
 
-    data class ShowSnackBar(val message: UiText) : UIEvent()
+    data class ShowSnackBar(val message: UIText) : UIEvent()
 }
