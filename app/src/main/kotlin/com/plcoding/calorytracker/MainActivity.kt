@@ -17,6 +17,7 @@ import com.plcoding.core.navigation.Route
 import com.plcoding.onboarding.presentation.activity.ActivityScreen
 import com.plcoding.onboarding.presentation.age.AgeScreen
 import com.plcoding.onboarding.presentation.gender.GenderScreen
+import com.plcoding.onboarding.presentation.goal.GoalScreen
 import com.plcoding.onboarding.presentation.height.HeightScreen
 import com.plcoding.onboarding.presentation.weight.WeightScreen
 import com.plcoding.onboarding.presentation.welcome.WelcomeScreen
@@ -71,6 +72,9 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                         composable(Route.GOAL) {
+                            GoalScreen(
+                                onNavigate = navControler::navigate,
+                            )
                         }
                         composable(Route.TRACKER_OVERVIEW) {
                         }
