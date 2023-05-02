@@ -1,5 +1,8 @@
 package com.plcoding.tracker.data.di
 
+import android.app.Application
+import androidx.room.Room
+import com.plcoding.tracker.data.local.TrackerDatabase
 import com.plcoding.tracker.data.remote.OpenFoodApi
 import com.plcoding.tracker.data.remote.OpenFoodApi.Companion.BASE_URL
 import dagger.Module
@@ -38,5 +41,15 @@ object TrackerDataModule {
             .client(client)
             .build()
             .create()
+    }
+
+    @Provides
+    @Singleton
+    fun provideTrackerDatabase(app: Application): TrackerDatabase {
+        return Room.databaseBuilder(
+            app,
+            TrackerDatabase::class.java,
+            "tracker_db",
+        ).build()
     }
 }
