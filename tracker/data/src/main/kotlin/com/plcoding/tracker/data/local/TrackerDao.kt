@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.Flow
 interface TrackerDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertTrackerFood(trackedFoodEntity: TrackedFoodEntity)
+    suspend fun insertTrackedFood(trackedFoodEntity: TrackedFoodEntity)
 
     @Delete
     suspend fun deleteTrackedFood(trackedFoodEntity: TrackedFoodEntity)
@@ -20,7 +20,7 @@ interface TrackerDao {
     @Query(
         """
             SELECT *
-            FROM trackedfoodentity
+            FROM trackedFoodEntity
             WHERE dayOfMonth = :day AND month = :month AND year = :year
         """,
     )

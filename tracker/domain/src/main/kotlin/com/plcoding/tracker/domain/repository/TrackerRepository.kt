@@ -13,9 +13,7 @@ interface TrackerRepository {
         pageSize: Int,
     ): Result<List<TrackableFood>>
 
-    suspend fun insertTrackedFood(
-        food: TrackableFood,
-    )
+    suspend fun insertTrackedFood(food: TrackedFood)
 
     suspend fun deleteTrackedFood(food: TrackedFood)
 
