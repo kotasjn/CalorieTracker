@@ -8,8 +8,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.graphics.Color
 import com.plcoding.calorytrackerprep.ui.theme.Typography
+import com.plcoding.coreui.BrightGreen
+import com.plcoding.coreui.DarkGray
+import com.plcoding.coreui.DarkGreen
 import com.plcoding.coreui.Dimensions
+import com.plcoding.coreui.LightGray
 import com.plcoding.coreui.LocalSpacing
+import com.plcoding.coreui.MediumGray
+import com.plcoding.coreui.Orange
+import com.plcoding.coreui.TextWhite
 
 private val DarkColorPalette = darkColors(
     primary = BrightGreen,
