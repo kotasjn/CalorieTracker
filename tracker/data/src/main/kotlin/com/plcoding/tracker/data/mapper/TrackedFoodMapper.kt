@@ -5,7 +5,7 @@ import com.plcoding.tracker.domain.model.MealType
 import com.plcoding.tracker.domain.model.TrackedFood
 import java.time.LocalDate
 
-fun TrackedFoodEntity.toTrackableFood(): TrackedFood {
+fun TrackedFoodEntity.toTrackedFood(): TrackedFood {
     return TrackedFood(
         name = name,
         carbs = carbs,
@@ -16,6 +16,7 @@ fun TrackedFoodEntity.toTrackableFood(): TrackedFood {
         amount = amount,
         date = LocalDate.of(year, month, dayOfMonth),
         calories = calories,
+        id = id,
     )
 }
 
@@ -26,8 +27,8 @@ fun TrackedFood.toTrackedFoodEntity(): TrackedFoodEntity {
         protein = protein,
         fat = fat,
         imageUrl = imageUrl,
-        amount = amount,
         type = mealType.name,
+        amount = amount,
         dayOfMonth = date.dayOfMonth,
         month = date.monthValue,
         year = date.year,

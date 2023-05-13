@@ -2,6 +2,7 @@ package com.plcoding.tracker.data.remote.repository
 
 import com.plcoding.tracker.data.local.TrackerDao
 import com.plcoding.tracker.data.mapper.toTrackableFood
+import com.plcoding.tracker.data.mapper.toTrackedFood
 import com.plcoding.tracker.data.mapper.toTrackedFoodEntity
 import com.plcoding.tracker.data.remote.OpenFoodApi
 import com.plcoding.tracker.domain.model.TrackableFood
@@ -45,7 +46,7 @@ class TrackerRepositoryImpl(
         return dao.getFoodsForDay(localDate.dayOfMonth, localDate.monthValue, localDate.year)
             .map { entities ->
                 entities.map {
-                    it.toTrackableFood()
+                    it.toTrackedFood()
                 }
             }
     }
