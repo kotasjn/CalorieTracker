@@ -6,7 +6,6 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.plcoding.core.domain.preferences.Preferences
-import com.plcoding.core.navigation.Route
 import com.plcoding.core.util.UIEvent
 import com.plcoding.tracker.domain.usecase.TrackerUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -39,20 +38,6 @@ class TrackerOverviewViewModel @Inject constructor(
 
     fun onEvent(event: TrackerOverviewEvent) {
         when (event) {
-            is TrackerOverviewEvent.OnAddFoodClick -> {
-                viewModelScope.launch {
-                    _uiEvent.send(
-                        UIEvent.Navigate(
-                            route = Route.SEARCH +
-                                "/${event.meal.mealType.name}" +
-                                "/${state.date.dayOfMonth}" +
-                                "/${state.date.monthValue}" +
-                                "/${state.date.year}",
-                        ),
-                    )
-                }
-            }
-
             is TrackerOverviewEvent.OnDeleteTrackedFoodClick -> {
                 viewModelScope.launch {
                     trackerUseCases.deleteTrackedFood(event.trackedFood)
