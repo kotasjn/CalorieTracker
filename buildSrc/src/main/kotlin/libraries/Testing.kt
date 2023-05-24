@@ -23,7 +23,8 @@ object Testing {
     private const val mockWebServerVersion = "4.9.3"
     const val mockWebServer = "com.squareup.okhttp3:mockwebserver:$mockWebServerVersion"
 
-    const val composeUiTest = "androidx.compose.ui:ui-test-junit4"
+    private const val junitComposeVersion = "1.4.3"
+    const val composeUiTest = "androidx.compose.ui:ui-test-junit4:$junitComposeVersion"
 
     const val hiltTesting = "com.google.dagger:hilt-android-testing:${DaggerHilt.version}"
 
