@@ -1,4 +1,4 @@
-package com.plcoding.tracker.data.remote.repository
+package com.plcoding.tracker.data.repository
 
 import com.plcoding.tracker.data.local.TrackerDao
 import com.plcoding.tracker.data.mapper.toTrackableFood

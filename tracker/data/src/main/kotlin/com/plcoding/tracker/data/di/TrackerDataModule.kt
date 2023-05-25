@@ -5,7 +5,7 @@ import androidx.room.Room
 import com.plcoding.tracker.data.local.TrackerDatabase
 import com.plcoding.tracker.data.remote.OpenFoodApi
 import com.plcoding.tracker.data.remote.OpenFoodApi.Companion.BASE_URL
-import com.plcoding.tracker.data.remote.repository.TrackerRepositoryImpl
+import com.plcoding.tracker.data.repository.TrackerRepositoryImpl
 import com.plcoding.tracker.domain.repository.TrackerRepository
 import dagger.Module
 import dagger.Provides
