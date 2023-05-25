@@ -25,7 +25,7 @@ android {
         versionName = ProjectConfig.versionName
         multiDexEnabled = true
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.plcoding.calorytracker.HiltTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
