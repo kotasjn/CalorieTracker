@@ -8,6 +8,7 @@ buildscript {
         classpath(libraries.Build.androidBuildTools)
         classpath(libraries.Build.hiltAndroidGradlePlugin)
         classpath(libraries.Build.kotlinGradlePlugin)
+        classpath(libraries.Build.paparazziPlugin)
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
