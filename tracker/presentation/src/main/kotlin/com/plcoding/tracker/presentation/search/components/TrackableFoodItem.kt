@@ -41,7 +41,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
+import com.plcoding.coreui.CaloryTrackerTheme
+import com.plcoding.coreui.ComponentPreview
 import com.plcoding.coreui.LocalSpacing
+import com.plcoding.tracker.domain.model.TrackableFood
 import com.plcoding.tracker.presentation.R
 import com.plcoding.tracker.presentation.components.NutrientInfo
 import com.plcoding.tracker.presentation.search.TrackableFoodUiState
@@ -195,5 +198,27 @@ fun TrackableFoodItem(
                 }
             }
         }
+    }
+}
+
+@ComponentPreview
+@Composable
+fun TrackableFoodItemPreview() {
+    CaloryTrackerTheme {
+        TrackableFoodItem(
+            trackableFoodUiState = TrackableFoodUiState(
+                food = TrackableFood(
+                    name = "Apple",
+                    imageUrl = null,
+                    caloriesPer100g = 100,
+                    carbsPer100g = 100,
+                    proteinsPer100g = 100,
+                    fatPer100g = 100,
+                ),
+            ),
+            onClick = {},
+            onAmountChange = {},
+            onTrack = {},
+        )
     }
 }
