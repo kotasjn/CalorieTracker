@@ -36,7 +36,7 @@ import java.time.LocalDate
 fun SearchScreen(
     scaffoldState: ScaffoldState,
     mealName: String,
-    dayOfMont: Int,
+    dayOfMonth: Int,
     month: Int,
     year: Int,
     onNavigateUp: () -> Unit,
@@ -107,7 +107,7 @@ fun SearchScreen(
                             SearchEvent.OnTrackFoodClick(
                                 food = food.food,
                                 mealType = MealType.fromString(mealName),
-                                date = LocalDate.of(year, month, dayOfMont),
+                                date = LocalDate.of(year, month, dayOfMonth),
                             ),
                         )
                     },
