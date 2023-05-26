@@ -28,12 +28,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.plcoding.coreui.LocalSpacing
 import com.plcoding.tracker.domain.model.TrackedFood
 import com.plcoding.tracker.presentation.R
 import com.plcoding.tracker.presentation.components.NutrientInfo
 
+@OptIn(ExperimentalCoilApi::class)
 @Composable
 fun TrackedFoodItem(
     trackedFood: TrackedFood,

@@ -32,13 +32,15 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.LastBaseline
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import coil.compose.rememberImagePainter
+import coil.compose.rememberAsyncImagePainter
+import coil.request.ImageRequest
 import com.plcoding.coreui.LocalSpacing
 import com.plcoding.tracker.presentation.R
 import com.plcoding.tracker.presentation.components.NutrientInfo
@@ -50,7 +52,7 @@ fun TrackableFoodItem(
     onClick: () -> Unit,
     onAmountChange: (String) -> Unit,
     onTrack: () -> Unit,
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
 ) {
     val food = trackableFoodUiState.food
     val spacing = LocalSpacing.current
@@ -76,13 +78,13 @@ fun TrackableFoodItem(
                 modifier = Modifier.weight(1f),
             ) {
                 Image(
-                    painter = rememberImagePainter(
-                        data = food.imageUrl,
-                        builder = {
-                            crossfade(true)
-                            error(R.drawable.ic_burger)
-                            fallback(R.drawable.ic_burger)
-                        },
+                    painter = rememberAsyncImagePainter(
+                        ImageRequest.Builder(LocalContext.current).data(data = food.imageUrl)
+                            .apply(block = fun ImageRequest.Builder.() {
+                                crossfade(true)
+                                error(R.drawable.ic_burger)
+                                fallback(R.drawable.ic_burger)
+                            }).build(),
                     ),
                     contentDescription = food.name,
                     contentScale = ContentScale.Crop,

@@ -14,8 +14,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.plcoding.calorytracker.navigation.Route
-import com.plcoding.calorytracker.ui.theme.CaloryTrackerTheme
 import com.plcoding.core.domain.preferences.Preferences
+import com.plcoding.coreui.CaloryTrackerTheme
 import com.plcoding.onboarding.presentation.activity.ActivityScreen
 import com.plcoding.onboarding.presentation.age.AgeScreen
 import com.plcoding.onboarding.presentation.gender.GenderScreen
