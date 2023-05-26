@@ -61,6 +61,8 @@ android {
                     "META-INF/AL2.0",
                     "META-INF/LGPL2.1",
                     "**/attach_hotspot_windows.dll",
+                    "META-INF/LICENSE.md",
+                    "META-INF/LICENSE-notice.md",
                     "META-INF/licenses/ASM",
                     "META-INF/*.kotlin_module",
                 ),
