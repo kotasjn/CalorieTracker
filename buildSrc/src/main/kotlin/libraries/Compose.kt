@@ -8,6 +8,7 @@ object Compose {
     const val composeBom = "androidx.compose:compose-bom:$composeBomVersion"
     const val material = "androidx.compose.material:material"
     const val ui = "androidx.compose.ui:ui"
+    const val uiTooling = "androidx.compose.ui:ui-tooling"
     const val uiToolingPreview = "androidx.compose.ui:ui-tooling-preview"
     const val runtime = "androidx.compose.runtime:runtime"
 
