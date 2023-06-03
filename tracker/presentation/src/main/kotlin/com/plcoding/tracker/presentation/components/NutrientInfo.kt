@@ -11,6 +11,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
+import com.plcoding.coreui.CaloryTrackerTheme
+import com.plcoding.coreui.ComponentPreview
 
 @Composable
 fun NutrientInfo(
@@ -41,6 +43,18 @@ fun NutrientInfo(
             color = MaterialTheme.colors.onBackground,
             style = nameTextStyle,
             fontWeight = FontWeight.Light,
+        )
+    }
+}
+
+@ComponentPreview
+@Composable
+fun NutrientInfoPreview() {
+    CaloryTrackerTheme {
+        NutrientInfo(
+            name = "Carbs",
+            amount = 100,
+            unit = "g",
         )
     }
 }

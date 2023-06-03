@@ -11,6 +11,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.LastBaseline
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
+import com.plcoding.coreui.CaloryTrackerTheme
+import com.plcoding.coreui.ComponentPreview
 import com.plcoding.coreui.LocalSpacing
 
 @Composable
@@ -39,6 +41,17 @@ fun UnitDisplay(
             fontSize = unitTextSize,
             color = unitColor,
             modifier = Modifier.alignBy(LastBaseline),
+        )
+    }
+}
+
+@ComponentPreview
+@Composable
+fun UnitDisplayPreview() {
+    CaloryTrackerTheme {
+        UnitDisplay(
+            amount = 100,
+            unit = "g",
         )
     }
 }
