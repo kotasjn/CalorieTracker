@@ -6,6 +6,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-parcelize'
+apply plugin: 'app.cash.paparazzi'
 
 android {
     compileSdk ProjectConfig.compileSdk
