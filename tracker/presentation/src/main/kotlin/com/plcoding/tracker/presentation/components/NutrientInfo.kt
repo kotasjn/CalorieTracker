@@ -11,8 +11,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
-import com.plcoding.coreui.CaloryTrackerTheme
 import com.plcoding.coreui.ComponentPreview
+import com.plcoding.coreui.PreviewSurface
 
 @Composable
 fun NutrientInfo(
@@ -50,7 +50,7 @@ fun NutrientInfo(
 @ComponentPreview
 @Composable
 fun NutrientInfoPreview() {
-    CaloryTrackerTheme {
+    PreviewSurface {
         NutrientInfo(
             name = "Carbs",
             amount = 100,

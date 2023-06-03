@@ -14,6 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import com.plcoding.coreui.LocalSpacing
+import com.plcoding.coreui.PreviewSurface
+import com.plcoding.coreui.ScreenPreview
 import com.plcoding.onboarding.presentation.R
 import com.plcoding.onboarding.presentation.components.ActionButton
 
@@ -39,6 +41,16 @@ fun WelcomeScreen(
             text = stringResource(id = R.string.next),
             onClick = { onNextClick() },
             modifier = Modifier.align(Alignment.CenterHorizontally),
+        )
+    }
+}
+
+@Composable
+@ScreenPreview
+fun WelcomeScreenPreview() {
+    PreviewSurface {
+        WelcomeScreen(
+            onNextClick = {},
         )
     }
 }
