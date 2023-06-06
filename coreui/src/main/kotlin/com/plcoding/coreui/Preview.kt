@@ -22,8 +22,13 @@ import androidx.compose.ui.tooling.preview.Preview
 )
 annotation class ScreenPreview
 
-@Preview(name = "Light preview", showBackground = true)
-@Preview(name = "Dark preview", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Light preview", group = "components", showBackground = true)
+@Preview(
+    name = "Dark preview",
+    group = "components",
+    showBackground = true,
+    uiMode = Configuration.UI_MODE_NIGHT_YES,
+)
 annotation class ComponentPreview
 
 @Composable

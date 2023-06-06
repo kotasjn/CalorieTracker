@@ -5,6 +5,7 @@ import libraries.DaggerHilt
 import libraries.Google
 import libraries.Retrofit
 import libraries.Room
+import libraries.Showkase
 import libraries.Testing
 
 plugins {
@@ -42,8 +43,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     composeOptions {
@@ -51,7 +52,7 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 
     packagingOptions {
@@ -79,6 +80,7 @@ android {
         implementation(project(Modules.trackerPresentation))
         implementation(project(Modules.trackerDomain))
         implementation(project(Modules.trackerData))
+        implementation(project(Modules.screenshots))
 
         // Jetpack Compose dependencies
         implementation(platform(Compose.composeBom))
@@ -91,6 +93,9 @@ android {
         implementation(Compose.navigation)
         implementation(Compose.viewModelCompose)
         implementation(Compose.activityCompose)
+
+        implementation(Showkase.showkase)
+        kapt(Showkase.showkaseProcessor)
 
         // Hilt dependencies
         implementation(DaggerHilt.hiltAndroid)

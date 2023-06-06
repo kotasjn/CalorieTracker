@@ -24,3 +24,5 @@ include(
     ":tracker:domain",
     ":tracker:presentation",
 )
+
+include(":screenshots")
