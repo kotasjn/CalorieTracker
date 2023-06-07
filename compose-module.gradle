@@ -7,6 +7,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-parcelize'
+apply plugin: 'com.google.devtools.ksp'
 apply plugin: 'app.cash.paparazzi'
 
 android {
@@ -64,7 +65,7 @@ dependencies {
     debugImplementation Compose.uiTooling
 
     implementation Showkase.showkase
-    kapt Showkase.showkaseProcessor
+    ksp Showkase.showkaseProcessor
 
     kapt DaggerHilt.hiltCompiler
     implementation DaggerHilt.hiltAndroid

@@ -3,7 +3,7 @@ import libraries.Showkase
 plugins {
     id("com.android.library")
     id("kotlin-android")
-    id("kotlin-kapt")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -39,5 +39,5 @@ dependencies {
 
     // Showkase dependencies
     implementation(Showkase.showkase)
-    kapt(Showkase.showkaseProcessor)
+    ksp(Showkase.showkaseProcessor)
 }
