@@ -16,7 +16,7 @@ buildscript {
 }
 
 plugins {
-    id("com.google.devtools.ksp") version "1.8.0-1.0.9" apply false
+    id("com.google.devtools.ksp") version libraries.Build.kspVersion apply false
 }
 
 tasks.create<Delete>("clean") {
