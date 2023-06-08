@@ -9,9 +9,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
+import com.airbnb.android.showkase.annotation.ShowkaseComposable
+import com.plcoding.coreui.ComponentPreview
 import com.plcoding.coreui.PreviewSurface
 
 @Composable
@@ -47,7 +48,8 @@ fun NutrientInfo(
     }
 }
 
-@Preview(name = "Light preview", group = "components", showBackground = true)
+@ComponentPreview
+@ShowkaseComposable(name = "NutrientInfo", group = "Components")
 @Composable
 fun NutrientInfoPreview() {
     PreviewSurface {

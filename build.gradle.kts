@@ -15,10 +15,6 @@ buildscript {
     }
 }
 
-plugins {
-    id("com.google.devtools.ksp") version libraries.Build.kspVersion apply false
-}
-
 tasks.create<Delete>("clean") {
     delete(rootProject.buildDir)
 }
