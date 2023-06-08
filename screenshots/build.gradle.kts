@@ -1,4 +1,6 @@
+import libraries.Compose
 import libraries.Showkase
+import libraries.Testing
 
 plugins {
     id("com.android.library")
@@ -22,6 +24,14 @@ android {
         }
     }
 
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = Compose.composeCompilerVersion
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -38,11 +48,15 @@ dependencies {
     implementation(project(Modules.onboardingPresentation))
     implementation(project(Modules.trackerPresentation))
 
+    implementation(platform(Compose.composeBom))
+    implementation(Compose.activityCompose)
+    implementation(Compose.material)
+
     // Showkase dependencies
     implementation(Showkase.showkase)
     kapt(Showkase.showkaseProcessor)
 
     testImplementation(Showkase.showkaseTesting)
-    testImplementation(Showkase.showkaseTestingPaparazzi)
+    testImplementation(Testing.testParameterInjector)
     kaptTest(Showkase.showkaseProcessor)
 }

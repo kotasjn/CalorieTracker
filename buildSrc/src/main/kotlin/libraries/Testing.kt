@@ -30,4 +30,8 @@ object Testing {
 
     private const val testRunnerVersion = "1.4.0"
     const val testRunner = "androidx.test:runner:$testRunnerVersion"
+
+    private const val testParameterInjectorVersion = "1.8"
+    const val testParameterInjector =
+        "com.google.testparameterinjector:test-parameter-injector:$testParameterInjectorVersion"
 }
