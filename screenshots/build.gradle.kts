@@ -56,7 +56,7 @@ dependencies {
     implementation(Showkase.showkase)
     kapt(Showkase.showkaseProcessor)
 
-    testImplementation(Showkase.showkaseTesting)
+    testImplementation(Showkase.showkase)
     testImplementation(Testing.testParameterInjector)
     kaptTest(Showkase.showkaseProcessor)
 }
