@@ -1,6 +1,7 @@
 package com.plcoding.onboarding.presentation.components
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -15,7 +16,10 @@ import androidx.compose.ui.layout.LastBaseline
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.sp
+import com.airbnb.android.showkase.annotation.ShowkaseComposable
+import com.plcoding.coreui.ComponentPreview
 import com.plcoding.coreui.LocalSpacing
+import com.plcoding.coreui.PreviewSurface
 
 @Composable
 fun UnitTextField(
@@ -50,5 +54,20 @@ fun UnitTextField(
             text = unit,
             modifier = Modifier.alignBy(LastBaseline),
         )
+    }
+}
+
+@ComponentPreview
+@ShowkaseComposable(name = "UnitTextField", group = "Components")
+@Composable
+fun UnitTextFieldPreview() {
+    PreviewSurface {
+        Column {
+            UnitTextField(
+                value = "15",
+                unit = "kg",
+                onValueChange = {},
+            )
+        }
     }
 }
