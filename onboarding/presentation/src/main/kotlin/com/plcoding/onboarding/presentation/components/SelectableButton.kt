@@ -4,6 +4,9 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
@@ -15,7 +18,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
+import com.airbnb.android.showkase.annotation.ShowkaseComposable
+import com.plcoding.coreui.ComponentPreview
 import com.plcoding.coreui.LocalSpacing
+import com.plcoding.coreui.PreviewSurface
 
 @Composable
 fun SelectableButton(
@@ -52,5 +58,46 @@ fun SelectableButton(
             style = textStyle,
             color = if (isSelected) selectedTextColor else color,
         )
+    }
+}
+
+@ComponentPreview
+@ShowkaseComposable(name = "SelectableButton", group = "Components")
+@Composable
+fun SelectableButtonPreview() {
+    PreviewSurface {
+        Column {
+            SelectableButton(
+                text = "ButtonText",
+                isSelected = true,
+                color = MaterialTheme.colors.primaryVariant,
+                selectedTextColor = Color.White,
+                onClick = {},
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            SelectableButton(
+                text = "ButtonText",
+                isSelected = false,
+                color = MaterialTheme.colors.primaryVariant,
+                selectedTextColor = Color.White,
+                onClick = {},
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            SelectableButton(
+                text = "ButtonText",
+                isSelected = true,
+                color = MaterialTheme.colors.secondaryVariant,
+                selectedTextColor = Color.White,
+                onClick = {},
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            SelectableButton(
+                text = "ButtonText",
+                isSelected = false,
+                color = MaterialTheme.colors.secondaryVariant,
+                selectedTextColor = Color.White,
+                onClick = {},
+            )
+        }
     }
 }
