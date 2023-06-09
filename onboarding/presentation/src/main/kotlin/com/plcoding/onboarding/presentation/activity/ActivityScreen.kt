@@ -19,10 +19,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.airbnb.android.showkase.annotation.ShowkaseComposable
 import com.plcoding.core.R
 import com.plcoding.core.domain.model.ActivityLevel
 import com.plcoding.core.util.UIEvent
 import com.plcoding.coreui.LocalSpacing
+import com.plcoding.coreui.PreviewSurface
+import com.plcoding.coreui.ScreenPreview
 import com.plcoding.onboarding.presentation.components.ActionButton
 import com.plcoding.onboarding.presentation.components.SelectableButton
 
@@ -31,7 +34,6 @@ fun ActivityScreen(
     onNextClick: () -> Unit,
     viewModel: ActivityViewModel = hiltViewModel(),
 ) {
-    val spacing = LocalSpacing.current
     LaunchedEffect(key1 = true) {
         viewModel.uiEvent.collect { event ->
             when (event) {
@@ -40,6 +42,26 @@ fun ActivityScreen(
             }
         }
     }
+
+    ActivityScreenContent(
+        activityLevel = viewModel.selectedActivityLevel,
+        onGenderClick = {
+            viewModel.onGenderClick(it)
+        },
+        onNextClick = {
+            onNextClick.invoke()
+        },
+    )
+}
+
+@Composable
+fun ActivityScreenContent(
+    activityLevel: ActivityLevel,
+    onGenderClick: (ActivityLevel) -> Unit,
+    onNextClick: () -> Unit,
+) {
+    val spacing = LocalSpacing.current
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -59,10 +81,10 @@ fun ActivityScreen(
             Row {
                 SelectableButton(
                     text = stringResource(id = R.string.low),
-                    isSelected = viewModel.selectedActivityLevel is ActivityLevel.Low,
+                    isSelected = activityLevel is ActivityLevel.Low,
                     color = MaterialTheme.colors.primaryVariant,
                     selectedTextColor = Color.White,
-                    onClick = { viewModel.onGenderClick(ActivityLevel.Low) },
+                    onClick = { onGenderClick(ActivityLevel.Low) },
                     textStyle = MaterialTheme.typography.button.copy(
                         fontWeight = FontWeight.Normal,
                     ),
@@ -70,10 +92,10 @@ fun ActivityScreen(
                 Spacer(modifier = Modifier.width(spacing.spaceMedium))
                 SelectableButton(
                     text = stringResource(id = R.string.medium),
-                    isSelected = viewModel.selectedActivityLevel is ActivityLevel.Medium,
+                    isSelected = activityLevel is ActivityLevel.Medium,
                     color = MaterialTheme.colors.primaryVariant,
                     selectedTextColor = Color.White,
-                    onClick = { viewModel.onGenderClick(ActivityLevel.Medium) },
+                    onClick = { onGenderClick(ActivityLevel.Medium) },
                     textStyle = MaterialTheme.typography.button.copy(
                         fontWeight = FontWeight.Normal,
                     ),
@@ -81,10 +103,10 @@ fun ActivityScreen(
                 Spacer(modifier = Modifier.width(spacing.spaceMedium))
                 SelectableButton(
                     text = stringResource(id = R.string.high),
-                    isSelected = viewModel.selectedActivityLevel is ActivityLevel.High,
+                    isSelected = activityLevel is ActivityLevel.High,
                     color = MaterialTheme.colors.primaryVariant,
                     selectedTextColor = Color.White,
-                    onClick = { viewModel.onGenderClick(ActivityLevel.High) },
+                    onClick = { onGenderClick(ActivityLevel.High) },
                     textStyle = MaterialTheme.typography.button.copy(
                         fontWeight = FontWeight.Normal,
                     ),
@@ -93,8 +115,33 @@ fun ActivityScreen(
         }
         ActionButton(
             text = stringResource(id = R.string.next),
-            onClick = viewModel::onNextClick,
+            onClick = onNextClick,
             modifier = Modifier.align(Alignment.BottomCenter),
         )
+    }
+}
+
+@Composable
+@ScreenPreview
+@ShowkaseComposable(name = "ActivityScreen", group = "Screens")
+fun ActivityScreenPreview() {
+    PreviewSurface {
+        Column {
+            ActivityScreenContent(
+                activityLevel = ActivityLevel.Medium,
+                onGenderClick = {},
+                onNextClick = {},
+            )
+            ActivityScreenContent(
+                activityLevel = ActivityLevel.Medium,
+                onGenderClick = {},
+                onNextClick = {},
+            )
+            ActivityScreenContent(
+                activityLevel = ActivityLevel.Medium,
+                onGenderClick = {},
+                onNextClick = {},
+            )
+        }
     }
 }
